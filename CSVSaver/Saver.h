@@ -3,9 +3,9 @@
  * (c) Dmitry Dzyuba, 20.04.2022
  */
 #ifdef SAVER_LIB
-#define DELCSPEC __declspec(ddlexport)
+#define DELCSPEC __declspec(dllexport)
 #else
-#define DELCSPEC __declspec(ddlimport)
+#define DELCSPEC __declspec(dllimport)
 #endif
 #include <iostream>
 #include <string>
@@ -22,7 +22,7 @@ template<
 	typename T, //real type
 	typename = std::enable_if_t<std::is_arithmetic_v<T>, T>
 >
-class saver
+class DELCSPEC saver
 {
 public:
 	/**
